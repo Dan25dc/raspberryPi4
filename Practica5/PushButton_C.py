@@ -11,7 +11,7 @@ while True:
     a=button.wait_for_press()
 
     print()
-    print(a,' se ha presionado el botón')
+    print(a,', se ha presionado el botón')
     print()
 
     button.wait_for_release()
