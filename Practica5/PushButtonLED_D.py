@@ -8,7 +8,8 @@ while True:
 
     print()
     print()
-    print('No se ha presionado el botón')
+    print()
+    print('no se ha presionado el botón')
     print()
     print()
 
@@ -19,7 +20,7 @@ while True:
 
     b=led.on()
 
-    print(b,', se ha encendido el led 5 seg.')
+    print(b,', se ha encendido el led 5 seg')
     print()
 
     sleep(5)
