@@ -33,10 +33,10 @@ def CrearGraficos():
     frecuencias = pd.Series(distancias).value_counts()
 
     # Filtrar solo las frecuencias de 90, 75, 60, 45, 30, 15
-    frecuencias_filtradas = frecuencias.loc[[90, 75, 60, 45, 30, 15]]
+    #frecuencias_filtradas = frecuencias.loc[[90, 75, 60, 45, 30, 15]]
 
     # Gráfico de barras
-    axs[1].bar(frecuencias_filtradas.index, frecuencias_filtradas.values, align='center', width=5, color='skyblue', edgecolor='red')
+    axs[1].bar(frecuencias.index, frecuencias.values, align='center', width=0.5, color='skyblue', edgecolor='red')
     axs[1].set_xlabel("Distancia")
     axs[1].set_ylabel("Frecuencia")
     axs[1].set_title("Tabla de Frecuencia de Distancias")
