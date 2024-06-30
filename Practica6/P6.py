@@ -2,8 +2,6 @@ import RPi.GPIO as GPIO
 import time
 import matplotlib.pyplot as plt
 
-GPIO.setmode(GPIO.BOARD)
-
 # Define el pin al que esta conectado el circuito
 pin_to_circuit = 4
 
