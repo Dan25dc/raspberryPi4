@@ -2,7 +2,9 @@
 from gpiozero import CPUTemperature
 from time import sleep, strftime, time
 cpu= CPUTemperature()
-cpu.temperature()
+fecha=strftime("%Y-%M-%d")
+print(cpu.temperature)
+# cpu.temperature()
 strftime("%H:%M:%S")
 type (strftime("%H:%M:%S"))
 a= strftime("%H:%M:%S")

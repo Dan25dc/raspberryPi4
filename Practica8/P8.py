@@ -51,7 +51,7 @@ def CrearGraficos():
 try:
     while contador != 60:
         # Leer la distancia del sensor
-        distancia = int(round(ultrasonic.distance))
+        distancia = int(round(ultrasonic.distance*100))
         distancias.append(distancia)
 
         # Obtener la fecha y hora actual
@@ -88,3 +88,5 @@ finally:
         CrearGraficos()
     except Exception as e:
         print(f"No se pueden crear los gráficos, erorr de lectura: ",e)
+
+        
