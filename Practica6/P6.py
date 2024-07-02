@@ -2,8 +2,12 @@ import RPi.GPIO as GPIO
 import time
 import matplotlib.pyplot as plt
 
+#Usamos la numeracion fisica de los pines
+GPIO.setmode(GPIO.BOARD)
+
 # Define el pin al que esta conectado el circuito
-pin_to_circuit = 4
+pin_to_circuit = 7
+
 
 Iluminacion=['Lámpara apagada','Lámpara encendida','Luz celular']
 Sensor=[]
