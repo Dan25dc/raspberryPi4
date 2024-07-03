@@ -1,4 +1,4 @@
-import matplotlib.pylot as plt
+import matplotlib.pyplot as plt
 n = int (input("Ingrese la cantidad de alumnos \n"))
 print(n)
 
@@ -15,7 +15,7 @@ print(Nombres)
 print (Calificacion)
 
 fig= plt.figure()
-ax= fig.add_sublot(111)
+ax= fig.add_subplot(111)
 
 #alumnos= ["Adrian", "Daniel", "Esteban", "Juan", "Oscar"]
 datos= [2,4,6,8,10]

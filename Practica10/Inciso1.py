@@ -12,7 +12,7 @@ app.title("Hello world")
 welcome_message = tk.Label(app, text="Welcome to my App, write your name", font=("Times New Roman", 15), fg="#80d2d2")
 my_name = tk.Entry(app, width=10)
 update_text = tk.Button(app, command=say_my_name, text="Display my name")
-text_size = tk.Scale(app, from_=10, to=80, command=change_text_size)
+text_size = tk.Scale(app, from_=10, to=80, command=change_text_size, orient=tk.HORIZONTAL)
 my_cat = tk.PhotoImage(file="Raspberry.png")
 
 # Create a label widget to display the image (you can use a Canvas widget for more flexibility)
@@ -27,4 +27,3 @@ text_size.pack()
 my_cat_label.pack()
 
 app.mainloop()
-
