@@ -9,37 +9,48 @@ Motor1A = 16
 Motor1B = 18
 Motor1E = 22
 
+Contador=0
+# Crear una lista para almacenar los datos
+data = []
+
 GPIO.setup(Motor1A,GPIO.OUT)
 GPIO.setup(Motor1B,GPIO.OUT)
 GPIO.setup(Motor1E,GPIO.OUT)
 
+while Contador!=60:
 
-print("Avanzar")
-GPIO.output(Motor1A,GPIO.HIGH)
-GPIO.output(Motor1B,GPIO.LOW)
-GPIO.output(Motor1E,GPIO.HIGH)
-time.sleep(3)
-horaAvance=time.strftime("%H:%M:%S")
+    print("Avanzar")
+    GPIO.output(Motor1A,GPIO.HIGH)
+    GPIO.output(Motor1B,GPIO.LOW)
+    GPIO.output(Motor1E,GPIO.HIGH)
+    time.sleep(5)
+    Contador=Contador+5
+    horaAvance=time.strftime("%H:%M:%S")
+    data.append({"Sentido de giro": "Avanzar", "Duracion": 5, "Hora": horaAvance})
+  
 
-print("Retroceder")
-GPIO.output(Motor1A,GPIO.LOW)
-GPIO.output(Motor1B,GPIO.HIGH)
-GPIO.output(Motor1E,GPIO.HIGH)
-time.sleep(3)
-horaRetoceso=time.strftime("%H:%M:%S")
+    print("Retroceder")
+    GPIO.output(Motor1A,GPIO.LOW)
+    GPIO.output(Motor1B,GPIO.HIGH)
+    GPIO.output(Motor1E,GPIO.HIGH)
+    time.sleep(5)
+    Contador=Contador+5
+    horaRetoceso=time.strftime("%H:%M:%S")
+    data.append({"Sentido de giro": "Retroceder", "Duracion": 5, "Hora": horaRetoceso}) 
 
 
-print("Detener motor")
-GPIO.output(Motor1E,GPIO.LOW)
+    print("Detener motor")
+    GPIO.output(Motor1E,GPIO.LOW)
+    time.sleep(5)
+    Contador=Contador+5
+    horaRetoceso=time.strftime("%H:%M:%S")
+    data.append({"Sentido de giro": "Detenido", "Duracion": 5, "Hora": horaRetoceso}) 
 
 GPIO.cleanup()
 
-# Crear una lista para almacenar los datos
-data = []
-
 # Agregar datos para el sentido de giro, la duración y la hora
-data.append({"Sentido de giro": "Avanzar", "Duracion": 3, "Hora": horaAvance})
-data.append({"Sentido de giro": "Retroceder", "Duracion": 3, "Hora": horaRetoceso})
+# data.append({"Sentido de giro": "Avanzar", "Duracion": 3, "Hora": horaAvance})
+# data.append({"Sentido de giro": "Retroceder", "Duracion": 3, "Hora": horaRetoceso})
 
 # Crear un DataFrame a partir de la lista de datos
 df = pd.DataFrame(data)
