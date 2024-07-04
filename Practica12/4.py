@@ -17,7 +17,6 @@ print (Calificacion)
 fig= plt.figure()
 ax= fig.add_subplot(111)
 
-#alumnos= ["Adrian", "Daniel", "Esteban", "Juan", "Oscar"]
 datos= [2,4,6,8,10]
 xx= range (1,len(Calificacion)+1)
 
