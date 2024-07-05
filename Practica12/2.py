@@ -8,7 +8,7 @@ alumnos1= ["Adrian", "Daniel", "Esteban", "Juan", "Oscar"]
 datos1= [2,4,6,8,10]
 xx1= range (1,len(datos1)+1)
 
-alumnos2= ["Ayala", "Cervantes", "Hernandez", "Montenegro", "Ramirez"]
+alumnos2= ["Owaldo", "Juan", "Raul", "Jose", "Jesus"]
 datos2= [1,3,4,7,9]
 xx2= range (1,len(datos2)+1)
 
