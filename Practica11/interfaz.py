@@ -4,8 +4,11 @@ import tkinter as tk
 gui_root = tk.Tk()
 gui_root.iconbitmap("icono.ico")
 gui_root.title("Interfaz de Control")
-gui_root.geometry("500x200")
+gui_root.geometry("500x250")
 gui_root.configure(background="#24c5d4")
+imagen_monitor=tk.PhotoImage(file="./monitor.png")
+label_imagen=tk.Label(gui_root,image=imagen_monitor,background="#24c5d4")
+label_imagen.pack()
 frame= tk.Frame(gui_root)
 frame.pack(padx=5, pady=50)
 # Crear los botones
