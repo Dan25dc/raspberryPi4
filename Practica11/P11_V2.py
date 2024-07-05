@@ -26,7 +26,8 @@ while Contador!=60:
     time.sleep(5)
     Contador=Contador+5
     horaAvance=time.strftime("%H:%M:%S")
-    data.append({"Sentido de giro": "Avanzar", "Duracion": 5, "Hora": horaAvance})
+    data.append({"Sentido": "Avanzar", "Duracion": 5, "Hora": horaAvance})
+    print(f'Sentido de giro: Avanzar, Duracion: 5 segundos, Hora: {horaAvance}')
   
 
     print("Retroceder")
@@ -36,7 +37,8 @@ while Contador!=60:
     time.sleep(5)
     Contador=Contador+5
     horaRetoceso=time.strftime("%H:%M:%S")
-    data.append({"Sentido de giro": "Retroceder", "Duracion": 5, "Hora": horaRetoceso}) 
+    data.append({"Sentido": "Retroceder", "Duracion": 5, "Hora": horaRetoceso}) 
+    print(f'Sentido de giro: Retroceder, Duracion: 5 segundos, Hora: {horaAvance}')
 
 
     print("Detener motor")
@@ -44,13 +46,10 @@ while Contador!=60:
     time.sleep(5)
     Contador=Contador+5
     horaRetoceso=time.strftime("%H:%M:%S")
-    data.append({"Sentido de giro": "Detenido", "Duracion": 5, "Hora": horaRetoceso}) 
+    data.append({"Sentido": "Detenido", "Duracion": 5, "Hora": horaRetoceso}) 
+    print(f'Sentido de giro: Motor detenido, Duracion: 5 segundos, Hora: {horaAvance}')
 
 GPIO.cleanup()
-
-# Agregar datos para el sentido de giro, la duración y la hora
-# data.append({"Sentido de giro": "Avanzar", "Duracion": 3, "Hora": horaAvance})
-# data.append({"Sentido de giro": "Retroceder", "Duracion": 3, "Hora": horaRetoceso})
 
 # Crear un DataFrame a partir de la lista de datos
 df = pd.DataFrame(data)
