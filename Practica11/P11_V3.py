@@ -90,7 +90,6 @@ def detener():
 
 # Crear la ventana principal
 gui_root = tk.Tk()
-gui_root.iconbitmap("icono.ico")
 gui_root.title("Interfaz de Control")
 gui_root.geometry("500x200")
 gui_root.configure(background="#24c5d4")
