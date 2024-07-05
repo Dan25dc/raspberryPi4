@@ -30,6 +30,8 @@ def actualizar_tiempo(boton_actual):
         Transcurrido = calcular_tiempo()
         print(f"Tiempo transcurrido en {Last_Button}: {Transcurrido} segundos")
         data.append({"Sentido de giro":Last_Button, "Duracion": Transcurrido, "Hora": time.strftime("%H:%M:%S")})
+
+        print(f'Sentido de giro: {Last_Button}, Duracion: {Transcurrido}, Hora: {time.strftime("%H:%M:%S")}')
     Start_Time = time.monotonic()
     Last_Button = boton_actual
 
@@ -62,6 +64,7 @@ def detener():
         print(f"Tiempo transcurrido en {Last_Button}: {Transcurrido} segundos")
         
         data.append({"Sentido de giro":Last_Button, "Duracion": Transcurrido, "Hora": time.strftime("%H:%M:%S")})
+        print(f'Sentido de giro: {Last_Button}, Duracion: {Transcurrido}, Hora: {time.strftime("%H:%M:%S")}')
         Start_Time = None
         Last_Button = None
 
