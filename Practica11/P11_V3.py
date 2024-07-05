@@ -86,14 +86,19 @@ def detener():
 
 
 # Crear la ventana principal
-root = tk.Tk()
-root.title("Controlador")
+gui_root = tk.Tk()
+gui_root.iconbitmap("icono.ico")
+gui_root.title("Interfaz de Control")
+gui_root.geometry("500x200")
+gui_root.configure(background="#24c5d4")
+frame= tk.Frame(gui_root)
+frame.pack(padx=5, pady=50)
 
 # Crear los botones
-boton_avanzar = tk.Button(root, text="Avanzar", command=avanzar)
-boton_retroceder = tk.Button(root, text="Retroceder", command=retroceder)
-boton_parar = tk.Button(root, text="Parar", command=parar)
-boton_detener = tk.Button(root, text="Detener", command=detener)
+boton_avanzar = tk.Button(frame, text="Avanzar", command=avanzar)
+boton_retroceder = tk.Button(frame, text="Retroceder", command=retroceder)
+boton_parar = tk.Button(frame, text="Parar", command=parar)
+boton_detener = tk.Button(frame, text="Detener programa", command=detener)
 
 # Colocar los botones en la ventana
 boton_avanzar.pack(side=tk.LEFT, padx=5, pady=5)
@@ -101,4 +106,4 @@ boton_retroceder.pack(side=tk.LEFT, padx=5, pady=5)
 boton_parar.pack(side=tk.LEFT, padx=5, pady=5)
 boton_detener.pack(side=tk.LEFT, padx=5, pady=5)
 # Iniciar el bucle principal de la interfaz
-root.mainloop()
+gui_root.mainloop()
