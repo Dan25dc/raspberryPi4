@@ -29,7 +29,7 @@ def actualizar_tiempo(boton_actual):
     if Start_Time is not None and Last_Button is not None:
         Transcurrido = calcular_tiempo()
         print(f"Tiempo transcurrido en {Last_Button}: {Transcurrido} segundos")
-        data.append({"Sentido de giro":Last_Button, "Duracion": Transcurrido, "Hora": time.strftime("%H:%M:%S")})
+        data.append({"Sentido":Last_Button, "Duracion": Transcurrido, "Hora": time.strftime("%H:%M:%S")})
 
         print(f'Sentido de giro: {Last_Button}, Duracion: {Transcurrido}, Hora: {time.strftime("%H:%M:%S")}')
     Start_Time = time.monotonic()
@@ -40,19 +40,19 @@ def avanzar():
     GPIO.output(Motor1B,GPIO.LOW)
     GPIO.output(Motor1E,GPIO.HIGH)
     print("Estás en avanzar")
-    actualizar_tiempo("avanzar")
+    actualizar_tiempo("Avanzar")
 
 def retroceder():
     GPIO.output(Motor1A,GPIO.LOW)
     GPIO.output(Motor1B,GPIO.HIGH)
     GPIO.output(Motor1E,GPIO.HIGH)
     print("Estás en retroceder")
-    actualizar_tiempo("retroceder")
+    actualizar_tiempo("Retroceder")
 
 def parar():
     GPIO.output(Motor1E,GPIO.LOW)
     print("Estás en parar")
-    actualizar_tiempo("detenido")
+    actualizar_tiempo("Detenido")
 
 def detener():
     global Start_Time, Last_Button
@@ -63,7 +63,7 @@ def detener():
         Transcurrido = calcular_tiempo()
         print(f"Tiempo transcurrido en {Last_Button}: {Transcurrido} segundos")
         
-        data.append({"Sentido de giro":Last_Button, "Duracion": Transcurrido, "Hora": time.strftime("%H:%M:%S")})
+        data.append({"Sentido":Last_Button, "Duracion": Transcurrido, "Hora": time.strftime("%H:%M:%S")})
         print(f'Sentido de giro: {Last_Button}, Duracion: {Transcurrido}, Hora: {time.strftime("%H:%M:%S")}')
         Start_Time = None
         Last_Button = None
