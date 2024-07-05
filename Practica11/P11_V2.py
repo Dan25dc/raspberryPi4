@@ -51,10 +51,6 @@ while Contador!=60:
 
 GPIO.cleanup()
 
-# Agregar datos para el sentido de giro, la duración y la hora
-# data.append({"Sentido de giro": "Avanzar", "Duracion": 3, "Hora": horaAvance})
-# data.append({"Sentido de giro": "Retroceder", "Duracion": 3, "Hora": horaRetoceso})
-
 # Crear un DataFrame a partir de la lista de datos
 df = pd.DataFrame(data)
 
