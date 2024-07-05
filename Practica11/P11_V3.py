@@ -52,7 +52,7 @@ def retroceder():
 def parar():
     GPIO.output(Motor1E,GPIO.LOW)
     print("Estás en parar")
-    actualizar_tiempo("parar")
+    actualizar_tiempo("detenido")
 
 def detener():
     global Start_Time, Last_Button
