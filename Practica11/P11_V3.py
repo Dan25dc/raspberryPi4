@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import tkinter as tk
+from tkinter import *
 import time
 import pandas as pd
 from datetime import datetime
@@ -12,6 +13,8 @@ Motor1E = 22
 GPIO.setup(Motor1A, GPIO.OUT)
 GPIO.setup(Motor1B, GPIO.OUT)
 GPIO.setup(Motor1E, GPIO.OUT)
+
+estado=StringVar()
 
 # Inicialización de variables
 data = []
@@ -32,6 +35,8 @@ def actualizar_tiempo(boton_actual):
         data.append({"Sentido":Last_Button, "Duracion": Transcurrido, "Hora": time.strftime("%H:%M:%S")})
 
         print(f'Sentido de giro: {Last_Button}, Duracion: {Transcurrido}, Hora: {time.strftime("%H:%M:%S")}')
+        estado.set(f'Sentido de giro: {Last_Button}, Duracion: {Transcurrido}, Hora: {time.strftime("%H:%M:%S")}')
+        
     Start_Time = time.monotonic()
     Last_Button = boton_actual
 
@@ -65,6 +70,9 @@ def detener():
         
         data.append({"Sentido":Last_Button, "Duracion": Transcurrido, "Hora": time.strftime("%H:%M:%S")})
         print(f'Sentido de giro: {Last_Button}, Duracion: {Transcurrido}, Hora: {time.strftime("%H:%M:%S")}')
+
+        estado.set(f'Sentido de giro: {Last_Button}, Duracion: {Transcurrido}, Hora: {time.strftime("%H:%M:%S")}')
+
         Start_Time = None
         Last_Button = None
 
@@ -90,11 +98,23 @@ def detener():
 
 # Crear la ventana principal
 gui_root = tk.Tk()
+<<<<<<< HEAD
+=======
+#gui_root.iconbitmap("icono.ico")
+>>>>>>> 3c6a096ebc7cef9dc917761f610d0d33a465f6d8
 gui_root.title("Interfaz de Control")
 gui_root.geometry("500x200")
 gui_root.configure(background="#24c5d4")
+imagen_monitor=tk.PhotoImage(file="./monitor.png")
+label_imagen=tk.Label(gui_root,image=imagen_monitor,background="#24c5d4")
+label_imagen.pack()
+
+
+labelestado=Label(gui_root,textvariable=estado)
+
 frame= tk.Frame(gui_root)
 frame.pack(padx=5, pady=50)
+
 
 # Crear los botones
 boton_avanzar = tk.Button(frame, text="Avanzar", command=avanzar)
