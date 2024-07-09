@@ -14,7 +14,7 @@ GPIO.setup(Motor1A, GPIO.OUT)
 GPIO.setup(Motor1B, GPIO.OUT)
 GPIO.setup(Motor1E, GPIO.OUT)
 
-estado=StringVar()
+
 
 # Inicialización de variables
 data = []
@@ -98,19 +98,17 @@ def detener():
 
 # Crear la ventana principal
 gui_root = tk.Tk()
-<<<<<<< HEAD
-=======
 #gui_root.iconbitmap("icono.ico")
->>>>>>> 3c6a096ebc7cef9dc917761f610d0d33a465f6d8
 gui_root.title("Interfaz de Control")
-gui_root.geometry("500x200")
+gui_root.geometry("500x300")
 gui_root.configure(background="#24c5d4")
 imagen_monitor=tk.PhotoImage(file="./monitor.png")
 label_imagen=tk.Label(gui_root,image=imagen_monitor,background="#24c5d4")
 label_imagen.pack()
 
-
+estado=StringVar()
 labelestado=Label(gui_root,textvariable=estado)
+labelestado.pack()
 
 frame= tk.Frame(gui_root)
 frame.pack(padx=5, pady=50)
